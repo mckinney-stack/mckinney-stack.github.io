@@ -1,0 +1,47 @@
+
+/* TRANSITIONS */
+
+.transition-1 {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    bottom: 0;
+    z-index: 101;
+    background-color: teal;
+    transition: 0.35s ease-out; 
+}
+
+.transition-1.is-active {
+    right: 0px;
+}
+ 
+.transition-2 {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    bottom: 0;
+    z-index: 101;
+    background-color: teal;
+    transition: 0.35s ease-out; 
+}
+
+.transition-2.is-active {
+    left: 0px;
+}
+
+.transition-3 {
+    position: fixed;
+    top: 100%;
+    left: 0%;
+    right: 0;
+    height: 100%;
+    z-index: 101;
+    background-color: teal;
+    transition: 0.35s ease-out; 
+}
+
+.transition-3.is-active {
+    top: 0;
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Loan Calculator</title>
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        input:disabled {
+            background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(59, 59, 59, 0.3));
+            border-color: rgba(118, 118, 118, 0.3);
+            color: white; 
+        }
+
+        .calculator-body {
+            border-radius: 3%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            height: 396px;
+        }
+
+        .calculator-container {
+            padding-top: 30px;
+        }
+
+        .calculator-heading {
+            padding-top: 25px;
+            letter-spacing: 0.12em;
+        }
+
+        .submit-btn {
+            position: relative;
+            top: 10px;
+            left: 50px;
+            width: 300px;
+        }
+
+        .input-text {
+            letter-spacing: 0.10em;
+        }
+
+        .results-container {
+            padding-top: 40px;
+            padding-bottom: 40px;    
+        }
+
+        .results-body {
+            opacity: 0;
+            transition: opacity 1000ms 1.5s ease-in-out;
+            border-radius: 3%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+            height: 400px;
+        }
+
+        .results-heading {
+            padding-top: 20px;
+            letter-spacing: 0.26em;
+        }
+
+        .monthly-payment {
+            position: relative;
+            padding-left: 50px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            top: 3px;
+            color: white;
+        }
+
+        .monthly-payment-results-input {
+            position: relative;
+            color: white !important;
+            left: 240px;
+            bottom: 44px;   
+        }
+
+        .total-payment {
+            position: relative;
+            padding-left: 76px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            bottom: 66px;
+        }
+
+        .total-payment-results-input {
+            position: relative;
+            color: white !important;
+            left: 240px;
+            bottom: 114px;   
+        }
+
+        .total-interest {
+            position: relative;
+            padding-left: 82px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            bottom: 133px;
+        }
+
+        .total-interest-results-input {
+            position: relative;
+            color: white !important;
+            left: 240px;
+            bottom: 184px;  
+        }
+
+        .years-results-text { 
+            position: relative;
+            padding-left: 150px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            bottom: 203px;
+        }
+
+        .years-results-input {
+            left: 240px;
+            bottom: 254px;
+            color: white !important;
+            position: relative;
+        }
+
+        .years-additional-text {
+            position: relative;
+            color: white;
+            font-size: 12px;
+            bottom: 268px;
+            left: 195px;
+        }
+
+        .year-slider {
+            position: relative;
+            bottom: 279px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            border-radius: 1000px;
+            height: 30px;
+            width: 8px;
+            margin-top: -14px;
+        }
+
+        input[type='range']::-webkit-slider-runnable-track {
+            background-color: white;
+            height: 2px;
+            border: 0;
+            border-radius: 50px;
+            width: 80%;
+        }
+
+        .alert {
+            position: relative;
+            width: 300px;
+            height: 40px; 
+            background-color: #ef9a9a;
+            border-radius: 0.2em;
+            padding-top: 9px;
+            top: 20px;
+            text-align: center;
+            letter-spacing: 0.10em;
+            margin: auto;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .loading-gif {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: block;
+            opacity: 0;
+            transition: opacity 700ms ease-in-out;
+        }
+
+        .gif-container {
+            position: relative;
+            top: 90px;
+        }
+
+
+    </style>
+</head>
+
+<body class="teal lighten-3">
+
+    <section class="calculator-container container center">
+        <div class="calculator-body grey darken-3 center z-depth-3">
+            <h5 class="calculator-heading center white-text">LOAN CALCULATOR</h5>
+            <!-- Input Fields -->
+            <form id="loan-form">
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons small white-text prefix">attach_money</i>
+                        <input type="number" id="amount" placeholder="Loan Amount" class="input-text white-text" min="5000" max="500000">
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons small white-text prefix">%</i>
+                        <input type="number" id="interest" placeholder="Interest" class="input-text white-text" min="1" max="50">
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons small white-text prefix">access_time</i>
+                        <input type="number" id="years" placeholder="Years to Repay (Max 10)" class="input-text white-text" min="1" max="10">
+                    </div>
+                    <!-- Submit Button -->
+             <button class="submit-btn col btn small-btn input-text z-depth-1" type="submit" name="action">CALCULATE</button> 
+            </form>
+    </section>
+
+    <!-- Loading GIF -->
+    <section class="container center gif-container">
+        <img src="loading-transparent.gif" alt="" class="loading-gif center">
+    </section>  
+    
+    <!-- Results -->
+    <section class="results-container container center" id="results-container">
+        <div class="results-body grey darken-3 center z-depth-3">
+            <h5 class="results-heading center white-text">RESULTS</h5>
+            <div class="row">
+                <div class="col s6">
+                    <p class="monthly-payment left">Monthly Payment:</p>
+                    <input class="monthly-payment-results-input" type="number" id="monthly-payment" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <p class="total-payment white-text left">Total Payment:</p>
+                    <input class="total-payment-results-input" type="number" id="total-payment" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <p class="total-interest white-text left">Total Interest:</p>
+                    <input class="total-interest-results-input" type="number" id="total-interest" disabled>
+                </div>
+            </div>
+            <!-- Year Slider -->
+            <div class="row">
+                <div class="col s6">
+                    <p class="years-results-text white-text left">Years:</p>
+                    <input type="text" id="year-slider-value" value="" disabled class="white-text years-results-input">
+                    <p class="years-additional-text">(Change years using slider below)</p>
+                </div>
+            </div>
+            <div class="container">
+                <input type="range" id="year-slider" name="year-slider" min="1" max="10" value="" class="year-slider z-depth-1" onchange="updateYearSliderValue(this.value);">
+            </div>
+        </div>
+    </section>
+    
+</body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+</html>

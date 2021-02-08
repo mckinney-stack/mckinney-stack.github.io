@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evan McKinney-Robinson – JavaScript Developer</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Link to stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transitions.css">
+</head>
+<body class="page background">
+
+    <!-- TRANSITION ELEMENT -->
+    <div class="transition transition-1 is-active"></div>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="container">
+            <span>
+                <h5 class="name">Evan McKinney-Robinson</h5>
+                <a href="index.html" class="nav-titles hide-on-small-only">Portfolio</a>
+                <a href="about.html" class="nav-titles hide-on-small-only">About</a>
+                <h6 class="sub-heading">JavaScript Developer</h6> 
+                <br>
+                <a href="index.html" class="small-screen-nav-titles hide-on-med-and-up">Portfolio</a>
+                <a href="about.html" class="small-screen-nav-titles hide-on-med-and-up">About</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="container">
+    <h2 class="contact-page-heading">Contact<span style="color: rgba(255, 217, 1, 0.952);">.</span></h2>
+    </div>
+
+    <div class="container">
+    
+    <br>
+    <h6 class="contact-sub-headings">Reach out to me directly...</h6>
+    <h6 class="right contact-sub-headings" id="contact-text">...or just fill out this form I made.</h6>
+    <br>
+    <div class="contact-info-container">
+        <i class="small material-icons contact-icons">phone</i><p class="contact-data">07703 859679</p>
+        <br>
+        <i class="small material-icons contact-icons">email</i><p class="contact-data email-text">evanmckinney94@gmail.com</p>
+        <br>
+        <i class="small fa fa-linkedin fa-linkedin-contact contact-icons" onclick="parent.open('https://www.linkedin.com/in/evan-mckinney-robinson-2532521ba/?originalSubdomain=uk');"></i><p class="contact-data linkedin-text" onclick="parent.open('https://www.linkedin.com/in/evan-mckinney-robinson-2532521ba/?originalSubdomain=uk');">LinkedIn</p>
+        <br>
+        <i class="small fa fa-github fa-github-contact contact-icons" onclick="parent.open('https://github.com/mckinney-stack');"></i><p class="contact-data github-text" onclick="parent.open('https://github.com/mckinney-stack');">GitHub</p>
+    </div>
+
+    <section class="form-section">
+        <div class="right contact-form z-depth-1" id="contact-form">
+            <form action="">
+
+                <div class="form-group">
+                    <i class="material-icons prefix">account_circle</i>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <i class="material-icons prefix">phone</i>
+                    <label for="number">Number</label>
+                    <input type="number" id="number" name="number" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <i class="material-icons prefix">email</i>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea cols="30" rows="10" id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="waves-effect">Send</button>
+
+            </form>
+        </div>
+    </section>
+
+    <div class="contact-divider"></div>
+        <footer>
+            <i class="small fa fa-linkedin footer-icons left linked-in-footer-icon" onclick="parent.open('https://www.linkedin.com/in/evan-mckinney-robinson-2532521ba/?originalSubdomain=uk');"></i>
+            <i class="small fa fa-github footer-icons left" onclick="parent.open('https://github.com/mckinney-stack');"></i>
+            <h6 class="footer-name right">Evan McKinney-Robinson</h6><br><br>
+            <h6 class="footer-job-title right">JavaScript Developer</h6>
+            <p class="footer-contact-details grey-text hide-on-small-only">07703 859679 – evanmckinney94@gmail.com</p>
+            <p class="footer-contact-details grey-text hide-on-med-and-up">07703 859679</p><br>
+            <p class="footer-contact-details grey-text hide-on-med-and-up">evanmckinney94@gmail.com</p>
+            <br>
+            <br>
+            <br>
+        </footer>
+
+    </div>
+    
+    
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</body>
+</html>
+
+    
+
+</body>

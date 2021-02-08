@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'montserrat', sans-serif;
+    background-image: url('images/james-beheshti-HRSCeUavNR4-unsplash.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.app-wrap {
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to top, rgba(214, 127, 127, 0.05), rgba(87, 87, 87, 0.3));
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 15px 15px;
+}
+
+header h3 {
+    letter-spacing: 0.09em;
+    font-size: 38px;
+    font-family: futura;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #313131;
+}
+
+header h3 span {
+    color: #eb644d;
+    font-weight: 900;
+    font-family: futura;
+    text-shadow: 1px 2px #313131cc;
+}
+
+main input {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 15px;
+    border: none; 
+    border-radius: 10px 13px 1px 13px;
+    border-bottom: 2px solid #eb654d96;
+    border-right: 1px solid #eb654d96;
+    margin-bottom: 40px;
+    outline: none; 
+    background-color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.04em;
+
+    color: #313131;
+    font-size: 18px;
+    font-weight: 300;
+    transition: 0.2s ease-out;
+}
+
+header input:focus {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+main {
+    flex: 1 1 100%;
+    padding: 25px 25px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 2em;
+}
+
+.location .city {
+    color: rgb(255, 255, 249);
+    font-size: 34px;
+    font-weight: 500; 
+    margin-bottom: 2px;
+    letter-spacing: 0.07em;
+}
+
+.location .date {
+    color: rgb(255, 255, 249);
+    font-size: 18px;
+    letter-spacing: 0.07em;
+    margin-bottom: 8px;
+}
+
+.current .temp {
+    color: rgb(255, 255, 249);
+    font-size: 102px;
+    font-weight: 400;
+    margin: 60px 0px; 
+    text-shadow: 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.current .temp span {
+    font-weight: 500;
+}
+
+.current .weather {
+    color: rgb(255, 255, 249);
+    font-size: 32px;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 5px; 
+    letter-spacing: 0.07em;
+    text-shadow: 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.current .hi-low {
+    color: rgb(255, 255, 249);
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.3);
+}
