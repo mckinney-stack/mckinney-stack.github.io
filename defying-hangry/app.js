@@ -1,13 +1,14 @@
-var elem = document.querySelector('.sidenav');
-    var instance = new M.Sidenav(elem);
+ // Initialise Sidenav
+    const elem = document.querySelector('.sidenav');
+    let instance = new M.Sidenav(elem);
 
+  // Initialise Parallaxes 
     document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems);
+    const elems = document.querySelectorAll('.parallax');
+    let instances = M.Parallax.init(elems);
   });
 
-
-  // SMALL SCREEN NAVBAR HEADING 
+  // Add / Remove Screen Navbar Heading on resize
   navHeading = document.getElementById("navHeading");
   
   var myScrollFunc = function() {
@@ -22,13 +23,14 @@ var elem = document.querySelector('.sidenav');
   window.addEventListener("scroll", myScrollFunc);
 
 
-  // ADD IN NAVBAR TITLE ON SMALL-MED SCREENS AFTER SCROLLING 
-  // Create element
+  // Add Navbar Title on Small / Medium Screens After Scrolling
 
+  // Create element
   const smallMedNav = document.createElement("a");
   const medNavStrong = document.createElement("strong");
   const nav = document.getElementById("nav");
 
+  // Append element 
   nav.appendChild(smallMedNav);
   smallMedNav.appendChild(medNavStrong);
   medNavStrong.innerHTML = "Defying Hangry.";
@@ -37,10 +39,14 @@ var elem = document.querySelector('.sidenav');
   smallMedNav.setAttribute("id", "smallMedNav");
   smallMedNav.setAttribute("style", "opacity: 0;"); 
 
+  // Add Resize Event Listener
+  window.addEventListener('resize', resizeFunction);
+
+  // Define Resize Function
   var resizeFunction = function (event) {
 
-      var smallMedNav = document.getElementById('smallMedNav');
-      var w = window.innerWidth;
+      let smallMedNav = document.getElementById('smallMedNav');
+      let w = window.innerWidth;
 
       if (w >= 601 && w <= 992) {
         smallMedNav.style.opacity = "1";
@@ -48,17 +54,13 @@ var elem = document.querySelector('.sidenav');
         smallMedNav.style.opacity = "0";
       }
 
-    };
-
-  window.addEventListener('resize', resizeFunction);
+  };
 
 
-
-  /////////////////
-
-
+  // Define counter
   let counter = 0;
 
+  // Create Classes
   class Recipe {
     constructor(title, image) {
         this.title = title;
@@ -66,47 +68,47 @@ var elem = document.querySelector('.sidenav');
     }
   }
 
-  class Favourite {
-    constructor(title, image, favourite) {
-        this.title = title;
-        this.image = image; 
-        this.favourite = favourite;
-    }
-  }
-
   class UI {
 
-    // Add Recipe To List
+    // Add Recipe to Favourites List
     addRecipeToList(recipe) {
 
+        // Get Favourites List Element
         const list = document.getElementById('favourites-list');
-        // Create column 
+
+        // Create column & Add Classes
         const entry = document.createElement('div');
         entry.classList = "col s4 m4";
+
         // Insert data 
         entry.innerHTML = `
         <h5 class="center futura small-spaced-letters button favourites-recipe-headings">${recipe.title}</h5>
           <img src="${recipe.image}" class="responsive-img favourites-image z-depth-2">
           <a class="btn-floating btn-small deep-orange fav-image-bottom-right z-depth-1"><i class="material-icons" id="delete-btn">favorite</i></a>
         `
+
+        // Append Entry to Favourites List
         list.appendChild(entry); 
     }
 
+    // Delete Recipe from Favourites List
     deleteRecipe(target) {
 
         if(target.id == 'delete-btn') {
 
             // Remove from DOM
             target.innerText = 'favorite_border';
-
             target.parentElement.parentElement.remove();
 
+            // Notify the user 
             M.toast({html: 'Favourite removed.'});
 
             // Decrement favCounter & change DOM values on zero
             favCounter--;
 
         if (favCounter === 0) {
+
+            // Reset favourites text to default
             let favTextParent = document.getElementById("favourites-content");
             let favText = document.createElement('div');
             favText.innerHTML = `<span id="favourites-text" class="right black-text right-align p-text-spacing" style="font-size: 20px;"><br>You haven't picked any favourites yet. You can choose some by clicking on the heart icons next to my <a href="#recipes" class="black-text button" style="text-decoration: underline;">recipe cards</a>.</span>`
@@ -114,16 +116,19 @@ var elem = document.querySelector('.sidenav');
             document.getElementById('favourites-content').style.bottom = "190px";
             document.getElementById('favourites-heading').style.marginTop = "";
             document.getElementById('favourites-heading').style.paddingBottom = "";
+
             }
-        }
-    }
+          }
+      }
   }
 
   // Local Storage Class
   class Store {
 
+      // Retrieve Data from Local Storage
       static getRecipes() {
         let recipes;
+
         if(localStorage.getItem('recipes') === null) {
             recipes = [];
         } else {
@@ -133,15 +138,18 @@ var elem = document.querySelector('.sidenav');
         return recipes;
       }
 
+      // Display Recipes
       static displayRecipes() {
         const recipes = Store.getRecipes();
 
         recipes.forEach(function(recipe){
+
             // Instantiate UI
             const ui = new UI;
 
             // Add recipe to UI
             ui.addRecipeToList(recipe);
+
         });
 
         // Set fav counter value
@@ -179,25 +187,20 @@ var elem = document.querySelector('.sidenav');
     }
   }
 
-  // Register class – Note and Manipulate Changes to recipe cards
+  
+  // Add Changes to Recipe Cards
 
-
-  // DOM LOAD EVENT – TO SET FAVOURITES FROM LOCAL STORAGE
+  // Display Favourites from Local Storage
   document.addEventListener('DOMContentLoaded', Store.displayRecipes);
-
-  // ADD DISPLAY FAVOURITE ICONS ON RECIPE CARDS FROM LOCAL STORAGE HERE? 
-
-
-
 
   // Grab all favourite buttons
   const favouriteBtns = document.querySelectorAll('#favourite-button');  
-  // Track number of favourites
+  // Track number of favourites added
   let favCounter = 0;
-  // Create array of favourites added
+  // Create array for favourites added
   let favsAddedArray = [];
 
-  // FAVOURITE BTN EVENT LISTENER (for recipes section)
+  // Favourite Btn Event Listener (for recipes section)
   favouriteBtns.forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         
@@ -206,25 +209,18 @@ var elem = document.querySelector('.sidenav');
               image = btn.parentElement.previousElementSibling.getAttribute('src'),
               favourite = btn.innerText;
         
-        // Instantiate Recipe and add to favs array
+        // Instantiate Recipe
         const recipe = new Recipe(title, image);
-
-        // Instantiate Favourite
-        const fav = new Favourite(title, image, favourite);
 
         // Instantiate UI
         const ui = new UI();
 
-        console.log(favsAddedArray);
-
-        // Change icon and notify 
+        // Change icons and notify user
         if (btn.innerText === 'favorite') {
             M.toast({html: 'Favourite removed.'});
-            // Change icon of recipe card to empty heart
             btn.innerText = 'favorite_border'
             console.log(btn.parentElement.previousElementSibling);
             favsAddedArray.splice(recipe);
-
 
         } else if (btn.innerText === 'favorite_border' && favCounter < 3) {
             btn.innerText = 'favorite'
@@ -247,8 +243,7 @@ var elem = document.querySelector('.sidenav');
     });
   });
 
-
-    // EVENT LISTENER FOR DELETE 
+    // Event Listener for Deleting a Favourite
     document.getElementById('favourites-list').addEventListener('click', function(e){
 
     // Instantiate UI 
@@ -260,22 +255,3 @@ var elem = document.querySelector('.sidenav');
 
     e.preventDefault();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
