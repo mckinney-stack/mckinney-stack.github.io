@@ -1,5 +1,6 @@
 // Listen for submit
 document.getElementById('loan-form').addEventListener('submit', calculateResults);
+
 // Get submit btn
 const submitBtn = document.querySelector('.submit-btn');
 // Get results body
@@ -34,7 +35,7 @@ const resultsInputFade = document.querySelector('.results-input-fade');
 // Calculate Results
 function calculateResults(e){
 
-    const principal = parseFloat(amount.value); // takes value of amount input and turning it into a decimal/'float' with parseFloat 
+    const principal = parseFloat(amount.value); // takes value of amount input and turns it into a decimal/'float' with parseFloat 
     const calculatedInterest = parseFloat(interest.value) / 100 / 12;
     const calculatedPayments = parseFloat(years.value) * 12;
 
@@ -102,7 +103,8 @@ function calculateResults(e){
 
 // Show Error
 function showError(error){
-    // Create a div
+    
+    // Create a div element
     const errorDiv = document.createElement('div');
 
     // Get elements
@@ -126,15 +128,14 @@ function showError(error){
     // Add z-depth class
     errorDiv.classList.add('z-depth-1');
 
-
-    // Fade error after 3 seconds
+    // Fade error after 2.5 seconds
     setTimeout(fadeError, 2400)
 
     function fadeError(){
         errorDiv.style.opacity = 0;
     }
 
-    // Clear error after 3.3 seconds
+    // Clear error after 3 seconds
     setTimeout(clearError, 3000);
 
     function clearError(){
@@ -145,6 +146,7 @@ function showError(error){
 
 // Change results based on years value/slider position
 function updateYearSliderValue(val) {
+    
     document.getElementById('year-slider-value').value = val;
     
     const principal = parseFloat(amount.value); // takes value of amount input and turning it into a decimal/'float' with parseFloat 
