@@ -1,0 +1,176 @@
+         html {
+                    scroll-behavior: smooth;
+                }
+
+        input:disabled {
+            background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(59, 59, 59, 0.3));
+            border-color: rgba(118, 118, 118, 0.3);
+            color: white; 
+        }
+
+        .calculator-body {
+            border-radius: 3%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            height: 396px;
+        }
+
+        .calculator-container {
+            padding-top: 30px;
+        }
+
+        .calculator-heading {
+            padding-top: 25px;
+            letter-spacing: 0.12em;
+        }
+
+        .submit-btn {
+            position: relative;
+            top: 10px;
+            left: 50px;
+            width: 300px;
+        }
+
+        .input-text {
+            letter-spacing: 0.10em;
+        }
+
+        .results-container {
+            padding-top: 40px;
+            padding-bottom: 40px;    
+        }
+
+        .results-body {
+            opacity: 0;
+            transition: opacity 1000ms 1.5s ease-in-out;
+            border-radius: 3%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+            height: 400px;
+        }
+
+        .results-heading {
+            padding-top: 20px;
+            letter-spacing: 0.26em;
+        }
+
+        .monthly-payment {
+            position: relative;
+            padding-left: 50px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            top: 3px;
+            color: white;
+        }
+
+        .monthly-payment-results-input {
+            position: relative;
+            color: white !important;
+            left: 240px;
+            bottom: 44px;   
+        }
+
+        .total-payment {
+            position: relative;
+            padding-left: 76px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            bottom: 66px;
+        }
+
+        .total-payment-results-input {
+            position: relative;
+            color: white !important;
+            left: 240px;
+            bottom: 114px;   
+        }
+
+        .total-interest {
+            position: relative;
+            padding-left: 82px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            bottom: 133px;
+        }
+
+        .total-interest-results-input {
+            position: relative;
+            color: white !important;
+            left: 240px;
+            bottom: 184px;  
+        }
+
+        .years-results-text { 
+            position: relative;
+            padding-left: 150px;
+            font-size: 16px;
+            letter-spacing: 0.10em;
+            bottom: 203px;
+        }
+
+        .years-results-input {
+            left: 240px;
+            bottom: 254px;
+            color: white !important;
+            position: relative;
+        }
+
+        .years-additional-text {
+            position: relative;
+            color: white;
+            font-size: 12px;
+            bottom: 268px;
+            left: 195px;
+        }
+
+        .year-slider {
+            position: relative;
+            bottom: 279px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            border-radius: 1000px;
+            height: 30px;
+            width: 8px;
+            margin-top: -14px;
+        }
+
+        input[type='range']::-webkit-slider-runnable-track {
+            background-color: white;
+            height: 2px;
+            border: 0;
+            border-radius: 50px;
+            width: 80%;
+        }
+
+        .alert {
+            position: relative;
+            width: 300px;
+            height: 40px; 
+            background-color: #ef9a9a;
+            border-radius: 0.2em;
+            padding-top: 9px;
+            top: 20px;
+            text-align: center;
+            letter-spacing: 0.10em;
+            margin: auto;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .loading-gif {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: block;
+            opacity: 0;
+            transition: opacity 700ms ease-in-out;
+        }
+
+        .gif-container {
+            position: relative;
+            top: 90px;
+        }
