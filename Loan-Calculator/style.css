@@ -8,6 +8,13 @@
             color: white; 
         }
 
+         
+         input::-webkit-outer-spin-button,
+         input::-webkit-inner-spin-button {
+           -webkit-appearance: none;
+           margin: 0;
+         }
+
         .calculator-body {
             border-radius: 3%;
             margin-left: auto;
