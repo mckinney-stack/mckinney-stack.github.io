@@ -1,9 +1,9 @@
 // Google Maps API
 
-var map;
+let map;
 
 function createMap () {
-    var options = {
+    let options = {
         center: { lat: 53.483959, lng: -2.244644 },
         zoom: 11,
     };
