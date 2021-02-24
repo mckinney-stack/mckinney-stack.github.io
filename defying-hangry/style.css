@@ -2,6 +2,10 @@
         scroll-behavior: smooth;
       }
 
+       body {
+        max-width: 1600px;
+       }
+
       .landingTitle {
         position: relative;
         color: white;
