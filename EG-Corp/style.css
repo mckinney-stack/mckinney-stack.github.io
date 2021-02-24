@@ -1,0 +1,30 @@
+.section-search input {
+  padding: 5px !important;
+  font-size: 18px !important;
+  width: 90% !important;
+  border: #f4f4f4 3px solid !important;
+}
+
+.section-follow .fa-4x {
+  margin: 5px 10px;
+}
+
+.tinted {
+  opacity: 0.55;
+}
+
+#padded {
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 10%;
+  height: 400px;
+}
+
+#map {
+  height: 380px;
+}
+
+.input-field input[type=text]:focus, .materialize-textarea {
+  border-bottom: 2px solid #7cb342 !important;
+  box-shadow: none !important;
+}
