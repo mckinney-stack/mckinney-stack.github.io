@@ -80,9 +80,10 @@
 
         // Create column & Add Classes
         const entry = document.createElement('div');
+        // Add Sizes – Using Materialize Grid Columns
         entry.classList = "col s4 m4";
 
-        // Insert data 
+        // Insert Data to New Favourite Recipe
         entry.innerHTML = `
         <h5 class="center futura small-spaced-letters button favourites-recipe-headings">${recipe.title}</h5>
           <img src="${recipe.image}" class="responsive-img favourites-image z-depth-2">
@@ -202,11 +203,11 @@
   // Create array for favourites added
   let favsAddedArray = [];
 
-  // Favourite Btn Event Listener (for recipes section)
+  // Favourite Btn Event Listener (for each recipe card in the recipes section)
   favouriteBtns.forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         
-        // Get form values
+        // Get Recipe Card Title and Image – to Display as Recipe in the Favourites Section
         const title = btn.parentElement.parentElement.parentElement.previousElementSibling.innerText,
               image = btn.parentElement.previousElementSibling.getAttribute('src')
         
@@ -220,7 +221,6 @@
         if (btn.innerText === 'favorite') {
             M.toast({html: 'Favourite removed.'});
             btn.innerText = 'favorite_border'
-            console.log(btn.parentElement.previousElementSibling);
             favsAddedArray.splice(recipe);
 
         } else if (btn.innerText === 'favorite_border' && favCounter < 3) {
