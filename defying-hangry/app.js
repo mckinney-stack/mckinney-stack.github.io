@@ -60,7 +60,9 @@
   // Define counter
   let counter = 0;
 
-  // Create Classes
+  // Create Classes 
+
+  // Recipe Class - Will Handle the Addition of Recipes to Favourites
   class Recipe {
     constructor(title, image) {
         this.title = title;
@@ -206,8 +208,7 @@
         
         // Get form values
         const title = btn.parentElement.parentElement.parentElement.previousElementSibling.innerText,
-              image = btn.parentElement.previousElementSibling.getAttribute('src'),
-              favourite = btn.innerText;
+              image = btn.parentElement.previousElementSibling.getAttribute('src')
         
         // Instantiate Recipe
         const recipe = new Recipe(title, image);
