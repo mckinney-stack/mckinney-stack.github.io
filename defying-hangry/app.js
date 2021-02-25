@@ -220,10 +220,9 @@
 
         } else if (btn.innerText === 'favorite_border' && favCounter < 3) {
             btn.innerText = 'favorite'
-            setTimeout(function() {
-              btn.innerText = 'favorite_border' }, 5000);
             M.toast({html: 'Favourite added. Great choice!'});  
             favCounter++
+            setTimeout(function() { btn.innerText = 'favorite_border' }, 500);
             ui.addRecipeToList(recipe);
             favsAddedArray.push(recipe);
             Store.addRecipe(recipe);
