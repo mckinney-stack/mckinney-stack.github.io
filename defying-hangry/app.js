@@ -216,7 +216,7 @@
 
         // Change icons and notify user
         if (btn.innerText === 'favorite') {
-            M.toast({html: 'Favourite already added. Go to Favourites section to remove.'});
+            M.toast({html: 'Favourite already added. Go to the Favourites section to remove this.'});
 
         } else if (btn.innerText === 'favorite_border' && favCounter < 3) {
             btn.innerText = 'favorite'
