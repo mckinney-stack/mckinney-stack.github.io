@@ -216,11 +216,12 @@
 
         // Change icons and notify user
         if (btn.innerText === 'favorite') {
-            M.toast({html: 'Favourite removed.'});
-            btn.innerText = 'favorite_border'
+            M.toast({html: 'Favourite already added. Go to Favourites section to remove.'});
 
         } else if (btn.innerText === 'favorite_border' && favCounter < 3) {
             btn.innerText = 'favorite'
+            setTimeout(function() {
+              btn.innerText = 'favorite_border' }, 5000);
             M.toast({html: 'Favourite added. Great choice!'});  
             favCounter++
             ui.addRecipeToList(recipe);
