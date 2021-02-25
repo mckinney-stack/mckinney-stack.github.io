@@ -190,10 +190,7 @@
     }
   }
 
-  
-  // Add Changes to Recipe Cards
-
-  // Display Favourites from Local Storage
+  // Display Favourites from Local Storage on Page Load
   document.addEventListener('DOMContentLoaded', Store.displayRecipes);
 
   // Grab all favourite buttons
@@ -221,7 +218,6 @@
         if (btn.innerText === 'favorite') {
             M.toast({html: 'Favourite removed.'});
             btn.innerText = 'favorite_border'
-            favsAddedArray.splice(recipe);
 
         } else if (btn.innerText === 'favorite_border' && favCounter < 3) {
             btn.innerText = 'favorite'
@@ -244,12 +240,13 @@
     });
   });
 
+
     // Event Listener for Deleting a Favourite
     document.getElementById('favourites-list').addEventListener('click', function(e){
 
     // Instantiate UI 
     const ui = new UI();
-    // Delete recipe
+    // Delete Recipe Using Prototype Method
     ui.deleteRecipe(e.target);
     // Remove from LS
     Store.removeRecipe(e.target.parentElement.previousElementSibling.getAttribute("src"));
