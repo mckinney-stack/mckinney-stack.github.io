@@ -57,7 +57,7 @@
   };
 
 
-  // Define counter
+  // Define Counter
   let counter = 0;
 
   // Create Classes 
@@ -78,7 +78,7 @@
         // Get Favourites List Element
         const list = document.getElementById('favourites-list');
 
-        // Create column & Add Classes
+        // Create Column & Add Classes
         const entry = document.createElement('div');
         // Add Sizes – Using Materialize Grid Columns
         entry.classList = "col s4 m4";
@@ -103,10 +103,10 @@
             target.innerText = 'favorite_border';
             target.parentElement.parentElement.remove();
 
-            // Notify the user 
+            // Notify the User 
             M.toast({html: 'Favourite removed.'});
 
-            // Decrement favCounter & change DOM values on zero
+            // Decrement favCounter & Change DOM Values on Zero
             favCounter--;
 
         if (favCounter === 0) {
@@ -155,7 +155,7 @@
 
         });
 
-        // Set fav counter value
+        // Set Fav Counter Value
         favCounter = recipes.length;
         
          if (favCounter > 0) {
@@ -193,11 +193,11 @@
   // Display Favourites from Local Storage on Page Load
   document.addEventListener('DOMContentLoaded', Store.displayRecipes);
 
-  // Grab all favourite buttons
+  // Grab all Favourite Buttons
   const favouriteBtns = document.querySelectorAll('#favourite-button');  
   // Track number of favourites added
   let favCounter = 0;
-  // Create array for favourites added
+  // Create Array of Added Favourites
   let favsAddedArray = [];
 
   // Favourite Btn Event Listener (for each recipe card in the recipes section)
@@ -214,7 +214,7 @@
         // Instantiate UI
         const ui = new UI();
 
-        // Change icons and notify user
+        // Change Icons and Notify User
         if (btn.innerText === 'favorite') {
             M.toast({html: 'Favourite already added. Go to the Favourites section to remove this.'});
 
@@ -222,7 +222,7 @@
             btn.innerText = 'favorite'
             M.toast({html: 'Favourite added. Great choice!'});  
             favCounter++
-            setTimeout(function() { btn.innerText = 'favorite_border' }, 500);
+            setTimeout(function() { btn.innerText = 'favorite_border' }, 5000);
             ui.addRecipeToList(recipe);
             favsAddedArray.push(recipe);
             Store.addRecipe(recipe);
