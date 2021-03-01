@@ -78,6 +78,7 @@
     }
   }
 
+
   // UI Class - Will Handle the Creation/Removal of DOM Elements 
   class UI {
 
@@ -199,6 +200,7 @@
         localStorage.setItem('recipes', JSON.stringify(recipes));
     }
   }
+
 
   // Display Favourites from Local Storage on Page Load
   document.addEventListener('DOMContentLoaded', Store.displayRecipes);
