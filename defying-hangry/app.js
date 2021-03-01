@@ -1,4 +1,6 @@
- // Initialise Sidenav
+// Materialize/JQuery Initialisations
+
+  // Initialise Sidenav
     const elem = document.querySelector('.sidenav');
     let instance = new M.Sidenav(elem);
 
@@ -8,7 +10,11 @@
     let instances = M.Parallax.init(elems);
   });
 
-  // Add / Remove Screen Navbar Heading on resize
+
+
+
+  // Add/Remove Large/Small Navbar Headings on Window Resize
+
   navHeading = document.getElementById("navHeading");
   
   var myScrollFunc = function() {
@@ -22,15 +28,14 @@
 
   window.addEventListener("scroll", myScrollFunc);
 
-
-  // Add Navbar Title on Small / Medium Screens After Scrolling
-
-  // Create element
+  // Create Elements
   const smallMedNav = document.createElement("a");
   const medNavStrong = document.createElement("strong");
+
+  // Grab Nav Element
   const nav = document.getElementById("nav");
 
-  // Append element 
+  // Append Elements and Add Properties
   nav.appendChild(smallMedNav);
   smallMedNav.appendChild(medNavStrong);
   medNavStrong.innerHTML = "Defying Hangry.";
@@ -47,7 +52,8 @@
 
       let smallMedNav = document.getElementById('smallMedNav');
       let w = window.innerWidth;
-
+      
+      // Change Opacity/Visibility of Small Navbar Title Heading Based on Screen Width
       if (w >= 601 && w <= 992) {
         smallMedNav.style.opacity = "1";
       } else {
@@ -57,10 +63,12 @@
   };
 
 
+
+
+  // Functionality of Adding and Removing Favourites – Application Section 
+
   // Define Counter
   let counter = 0;
-
-  // Create Classes 
 
   // Recipe Class - Will Handle the Addition of Recipes to Favourites
   class Recipe {
@@ -70,6 +78,7 @@
     }
   }
 
+  // UI Class - Will Handle the Creation/Removal of DOM Elements 
   class UI {
 
     // Add Recipe to Favourites List
@@ -83,14 +92,14 @@
         // Add Sizes – Using Materialize Grid Columns
         entry.classList = "col s4 m4";
 
-        // Insert Data to New Favourite Recipe
+        // Insert HTML Data to New Favourite Recipe from Recipe Class Instance
         entry.innerHTML = `
         <h5 class="center futura small-spaced-letters button favourites-recipe-headings">${recipe.title}</h5>
           <img src="${recipe.image}" class="responsive-img favourites-image z-depth-2">
           <a class="btn-floating btn-small deep-orange fav-image-bottom-right z-depth-1"><i class="material-icons" id="delete-btn">favorite</i></a>
         `
 
-        // Append Entry to Favourites List
+        // Append Entry to Favourites List Section
         list.appendChild(entry); 
     }
 
@@ -111,7 +120,7 @@
 
         if (favCounter === 0) {
 
-            // Reset favourites text to default
+            // Reset Favourites Text to Default
             let favTextParent = document.getElementById("favourites-content");
             let favText = document.createElement('div');
             favText.innerHTML = `<span id="favourites-text" class="right black-text right-align p-text-spacing" style="font-size: 20px;"><br>You haven't picked any favourites yet. You can choose some by clicking on the heart icons next to my <a href="#recipes" class="black-text button" style="text-decoration: underline;">recipe cards</a>.</span>`
@@ -124,6 +133,7 @@
           }
       }
   }
+
 
   // Local Storage Class
   class Store {
