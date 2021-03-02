@@ -139,13 +139,15 @@
   // Local Storage Class
   class Store {
 
-      // Retrieve Data from Local Storage
+      // Retrieve Data from Local Storage Method
       static getRecipes() {
         let recipes;
 
         if(localStorage.getItem('recipes') === null) {
-            recipes = [];
-        } else {
+            // Return Empty Array if Nothing in LS
+            recipes = [];        
+        } else {          
+            // Add Data to 'recipes' if Data Available
             recipes = JSON.parse(localStorage.getItem('recipes'));
         }
 
@@ -154,8 +156,11 @@
 
       // Display Recipes
       static displayRecipes() {
+        
+        // Retrieve LS Data and Create Array
         const recipes = Store.getRecipes();
-
+        
+        // Create UI Object for Each LS Recipe Instance
         recipes.forEach(function(recipe){
 
             // Instantiate UI
@@ -169,6 +174,7 @@
         // Set Fav Counter Value
         favCounter = recipes.length;
         
+        // Reformat UI 'Favourites' Section Elements to Make Space for Favourited Recipes
          if (favCounter > 0) {
             let favText = document.getElementById('favourites-text');
             favText.remove();
@@ -180,17 +186,20 @@
 
       // Add Recipe
       static addRecipe(recipe) {
+        
+        // Link Variable/Array to LS Data
         const recipes = Store.getRecipes();
 
+        // Add Selected Instance to LS
         recipes.push(recipe);
-
         localStorage.setItem('recipes', JSON.stringify(recipes));
       }
 
       // Remove Recipe
       static removeRecipe(imgTitle) {
         const recipes = Store.getRecipes(); 
-                
+        
+        // Compares Image Data and Removes Matching Recipe        
         recipes.forEach(function(recipe, index){
             if(recipe.image === imgTitle) {
                 recipes.splice(index, 1);
@@ -201,29 +210,33 @@
     }
   }
 
-
-  // Display Favourites from Local Storage on Page Load
+  // Display Favourites from Local Storage on Page Load – Using Store.displayRecipes Method as Event Handler
   document.addEventListener('DOMContentLoaded', Store.displayRecipes);
 
-  // Grab all Favourite Buttons
+
+
+
+  // Add Functionality to Recipe Card Favourite Buttons
+
+  // Grab all Favourite Buttons – From Recipe cards
   const favouriteBtns = document.querySelectorAll('#favourite-button');  
-  // Track number of favourites added
+  // Track Number of Favourites Added
   let favCounter = 0;
-  // Create Array of Added Favourites
+  // Create Array of Favourites Added
   let favsAddedArray = [];
 
   // Favourite Btn Event Listener (for each recipe card in the recipes section)
   favouriteBtns.forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         
-        // Get Recipe Card Title and Image – to Display as Recipe in the Favourites Section
+        // Get Selected Recipe Card Title and Image – to Display as Recipe in the Favourites Section
         const title = btn.parentElement.parentElement.parentElement.previousElementSibling.innerText,
               image = btn.parentElement.previousElementSibling.getAttribute('src')
         
-        // Instantiate Recipe
+        // Instantiate new Recipe
         const recipe = new Recipe(title, image);
 
-        // Instantiate UI
+        // Instantiate new UI
         const ui = new UI();
 
         // Change Icons and Notify User
