@@ -1,4 +1,3 @@
-
 // API Key and Link 
 const api = {
     key: "ba3b2bf2af7c305dd0a95f5542fb7b71",
@@ -11,6 +10,7 @@ document.querySelector('.date').innerText = date.toDateString();
 
 // Get Searchbox 
 const searchbox = document.querySelector('.search-box');
+
 // Add Event Listener for Data Entry into Search Box
 searchbox.addEventListener('keypress', setQuery);
 
@@ -18,33 +18,35 @@ searchbox.addEventListener('keypress', setQuery);
 function setQuery(evt) {
     // 13 is equal to 'enter' on the keyboard
     if (evt.keyCode == 13) { 
+        // Grabs Value Entered into Searchbox
         getResults(searchbox.value);
     }
 }
+
 
 // Run Fetch Request and Return Weather Results – Query Argument Comes From Searchbox Value
 function getResults (query) {
     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => {
-        // Convert to JS Object
+        // Convert to JS Data
             return weather.json();
         }).then(displayResults);
     }
 
+
 // Display Weather Results Within the UI 
 function displayResults (weather) {
-    console.log(weather);
     
-    // Get City Element 
+    // Get City Element from DOM
     let city = document.querySelector('.location .city');
     // Assign Value for City from Data 
     city.innerText = `${weather.name}, ${weather.sys.country}`;
 
     // Retrieve Present Date Value
     let now = new Date();
-    // Get Date Element 
+    // Get Date Element from DOM
     let date = document.querySelector('.location .date');
-    // Call dateBuilder Function to Generate Date
+    // Call dateBuilder Function to Generate Current Date
     date.innerText = dateBuilder(now);
 
     // Get Temp Element
@@ -71,13 +73,13 @@ function dateBuilder (d) {
     // Array for Days
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    // Using Inbuilt Methods to Retrive Date Information
+    // Using Inbuilt JS Methods to Retrieve Date Information
     let day = days[d.getDay()];
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
 
-    // Return current date 
+    // Return Current Date 
     return `${day} ${date} ${month} ${year}`;
 }
 
