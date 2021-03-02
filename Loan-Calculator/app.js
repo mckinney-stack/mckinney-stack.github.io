@@ -1,19 +1,19 @@
-// Listen for submit
+// Listen for Submit
 document.getElementById('loan-form').addEventListener('submit', calculateResults);
 
-// Get submit btn
+// Get Submit Btn
 const submitBtn = document.querySelector('.submit-btn');
-// Get results body
+// Get Results Body
 const results = document.querySelector('.results-body');
-// Get loading gif
+// Get Loading gif
 const loadingGif = document.querySelector('.loading-gif');
-// Get gif container
+// Get gif Container
 const gifContainer = document.querySelector('.gif-container');
 
-// Define counter 
+// Define Counter 
 let counter = 0;
 
-// Define reusable UI functions 
+// Define Reusable UI Functions 
 function fadeGif() {
     loadingGif.style.opacity = 0;
 }
@@ -48,7 +48,7 @@ function calculateResults(e){
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = ((monthly * calculatedPayments)-principal).toFixed(2);
 
-        // Temporarily change btn content
+        // Temporarily Change Btn Content
         submitBtn.textContent = "CALCULATING...";
         setTimeout(calculatingEnd, 1700);
 
@@ -56,24 +56,24 @@ function calculateResults(e){
             submitBtn.textContent = "CALCULATE";
         }
 
-        // Scroll down to results
+        // Scroll Down to Results
         setTimeout(scrollDown, 100)
         function scrollDown(){
             window.scroll(0, 400);
         }
 
-        // Temporarily show loading gif - then fade out
+        // Temporarily Show Loading gif - then Fade Out
         loadingGif.style.opacity = 1;
         setTimeout(fadeGif, 1000);
 
-        // fade results in
+        // Fade Results in
         results.style.opacity = 1;
 
-        // Align year slider values
+        // Align Year Slider Values
         yearSlider.value = years.value;
         yearSliderValue.value = years.value;
 
-        // Increase counter value to change animation after 1st form submit
+        // Increase Counter Value to Change Animation After 1st Form Submit
         counter++;
         if (counter >= 2) {
             loadingGif.style.opacity = 1;
@@ -104,38 +104,38 @@ function calculateResults(e){
 // Show Error
 function showError(error){
     
-    // Create a div element
+    // Create a Div Element
     const errorDiv = document.createElement('div');
 
-    // Get elements
+    // Get Elements
     const card = document.querySelector('.calculator-body');
     const heading = document.querySelector('.calculator-heading');
 
-    // Add class
+    // Add Class
     errorDiv.className = 'alert';
 
-    // Create text node and append to div
+    // Create Text Node and Append to div
     errorDiv.appendChild(document.createTextNode(error));
 
-    // Insert error above heading
+    // Insert Error Above Heading
     card.insertBefore(errorDiv, heading);
 
-    // Extend calculator body height to accomodate alert + others
+    // Extend Calculator Body Height to Accomodate Alert + Others
     card.setAttribute('style', 'height : 436px');
     errorDiv.setAttribute('style', 'opacity : 1');
     errorDiv.setAttribute('style', 'transition : opacity 600ms ease-out');
 
-    // Add z-depth class
+    // Add z-depth Class
     errorDiv.classList.add('z-depth-1');
 
-    // Fade error after 2.5 seconds
-    setTimeout(fadeError, 2400)
-
+    // Fade Error After Delay
+    setTimeout(fadeError, 2400);
+    
     function fadeError(){
         errorDiv.style.opacity = 0;
     }
 
-    // Clear error after 3 seconds
+    // Clear Error After 3 Seconds
     setTimeout(clearError, 3000);
 
     function clearError(){
@@ -144,7 +144,7 @@ function showError(error){
     }
 }
 
-// Change results based on years value/slider position
+// Change Results Based on Years Value/Slider Position
 function updateYearSliderValue(val) {
     
     document.getElementById('year-slider-value').value = val;
