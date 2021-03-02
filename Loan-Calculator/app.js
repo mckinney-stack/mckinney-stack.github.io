@@ -21,7 +21,7 @@ function fadeResultsBackIn() {
     results.style.opacity = 1;
   };
 
-// UI Vars
+// UI Vars – Globally, so that updateYearSliderValue can Access them too 
 const amount = document.getElementById('amount');
 const interest = document.getElementById('interest');
 const years = document.getElementById('years');
@@ -44,7 +44,7 @@ function calculateResults(e){
     const monthly = (principal*x*calculatedInterest)/(x-1);
 
     if (isFinite(monthly)) {
-        monthlyPayment.value = monthly.toFixed(2); // toFixed sets the number of decimals
+        monthlyPayment.value = monthly.toFixed(2); // toFixed sets the number of decimals – 2 required in this case
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = ((monthly * calculatedPayments)-principal).toFixed(2);
 
@@ -85,7 +85,9 @@ function calculateResults(e){
                 results.style.opacity = 1;
             }
           };
+        
     } else {
+        
         showError('Please check your numbers');
 
         // Temporarily Disable Submit Btn 
@@ -162,8 +164,3 @@ function updateYearSliderValue(val) {
     totalInterest.value = ((monthly * calculatedPayments)-principal).toFixed(2);
     
   }
-
-
-  
-  
-
