@@ -23,8 +23,3 @@
 #map {
   height: 380px;
 }
-
-.input-field input[type=text]:focus, .materialize-textarea {
-  border-bottom: 2px solid #7cb342 !important;
-  box-shadow: none !important;
-}
