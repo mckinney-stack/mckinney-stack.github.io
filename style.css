@@ -223,7 +223,7 @@ h5 {
 /* EG CORP CARD */
 
 .eg-corp-card {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url("images/scott-graham-5fNmWej4tAA-unsplash.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url("chester-wedding-djs/images/mitchell-orr---LyFIjXoFY-unsplash.jpg");
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;
@@ -363,7 +363,7 @@ h5 {
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     overflow: hidden;
 }
 

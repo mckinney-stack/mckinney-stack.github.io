@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+
+    <!-- Import Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Mondserrat & -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            font-family: 'Poppins';
+            box-sizing: border-box;
+        }
+
+        .caption1 h1 {
+            font-size: 72px;
+            font-weight: 700;
+        }
+
+        .caption2 h2, .caption3 h2 {
+            font-size: 56px;
+            font-weight: 600;
+        }
+
+        .slider .slides h1, .slider .slides h2, .slider .slides h5 {
+          padding: 16px 12px;
+          display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+          .slider .slides h1, .slider .slides h2, .slider .slides h5 {
+            padding: 2vw 4.25vw;
+          }
+
+          .caption1 h1 {
+            font-size: 14.9vw; 
+            line-height: 17.6vw;
+          }
+
+          .caption2 h2, .caption3 h2 {
+            font-size: 10.7vw; 
+            line-height: 12.5vw;
+          }
+
+          .slider .slides h5 {
+            font-size: 4.4vw; 
+            line-height: 6.4vw;
+          }
+
+          .slider .slides li .caption {
+            top: 6%;
+          }
+
+          .slider .slides li .caption1 {
+            color: #fff;
+            position: absolute;
+            left: 10%;
+            width: 70%;
+            opacity: 0;
+          }
+
+          #about p, #contact p, #book-now p {
+            font-size: 3.73vw; 
+            line-height: 6vw;
+          }
+
+          .px-1 .container, .px-2 .container {
+    display: inline-block;
+  }
+  .px-1 .container h4 {
+    background: #ff8f00;
+    margin: 0 auto;
+    padding: 2.2vw 4vw;
+    text-align: right;
+  }
+  .px-2 .container h4 {
+    background: #e64a19;
+    margin: 0 auto;
+    padding: 2.2vw 4vw;
+    text-align: left
+  }
+  .px-2 .container {
+    float: right;
+  }
+
+
+} 
+
+.px-1 .container h4 {
+text-decoration: underline; text-decoration-thickness: 4px; text-decoration-color: #ff8f00;
+}
+
+.px-2 .container h4 {
+text-decoration: underline; text-decoration-thickness: 4px; text-decoration-color: #e64a19;;
+}
+      
+
+        .custom-navbar {
+          height: 152px;
+          line-height: 152px;
+          max-width: 1800px;
+          margin: 0 auto;
+        }
+
+        @media (min-width: 1800px) {
+  .custom-navbar {
+    margin: 32px auto 24px auto; /* Apply margin-top of 32px for larger screens */
+  }
+}
+
+        footer {
+          height: 196px;
+          max-width: 1800px;
+          margin: 0 auto 16px auto;
+        }
+
+        footer img {
+          height: 180px;
+          margin: 0;
+        }
+
+        .custom-container {
+          max-width: 1800px;
+          margin: 0 auto;
+        }
+
+        .parallax-container {
+          max-width: 1800px;
+          margin: 0 auto;
+        }
+
+        .slider {
+          max-width: 1800px; 
+          margin: 0 auto;
+        }
+
+        .custom-navbar img {
+          height: 152px;
+        }
+
+        .custom-navbar a {
+          font-size: 20px;
+          padding: 0 20px;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+
+        .highlight {
+          display: inline-block !important;
+        }
+
+
+        /* IMPORTED FROM PARALLAX FILE: */
+        
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+
+  
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.parallax img {
+      transform: scale(1); /* Adjust the scale to control the zoom level */
+      object-fit: cover; /* Ensure the image covers the container */
+      width: 100%; /* Ensure the image takes the full width of the container */
+      height: auto; /* Maintain the aspect ratio */
+    }
+
+    .material-symbols-outlined {
+    font-size: 3.56rem;
+  }
+
+  /* Hide increment buttons in Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide increment buttons in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    display: block;
+    font-size: 32px;
+    height: 56px;
+    line-height: 56px;
+}
+
+.sidenav-trigger {
+  top: 48px;
+}
+
+.sidenav {
+  width: 66%;
+}
+
+.sidenav-trigger {
+  position: fixed !important;
+  z-index: 999 !important;
+  right: 8vw;
+  float: right !important;
+  background-color: #00887A;
+  border-radius: 2px;
+}
+
+.sidenav-trigger i {
+  z-index: 1000 !important;
+ }
+
+ .chip {
+  align-items: center;
+  width: fit-content;
+  max-width: 300px; /* Adjust the width as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 32px; /* Space for the close icon */
+  position: relative;
+}
+
+.chip .close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 8px;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+    </style>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chester Wedding DJs</title>
+</head>
+
+<body id="home" class="scrollspy teal lighten-5">
+  
+<div class="custom-container">
+  
+  <!-- Navbar -->
+  <div class="nav-extended">
+    <nav class="teal darken-1 custom-navbar">
+      <div class="container">
+        <div class="nav-wrapper">
+          <img src="images/MIL.jpg" alt="Chester Wedding DJs. Est 2024."> 
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger right hide-on-med-and-up">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right teal darken-1 hide-on-small">
+            <li>
+              <a href="#about">About us</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+            <li>
+              <a href="#book-now">Free Consultation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul class="sidenav right right-align teal lighten-5" id="mobile-nav">
+    <li>
+      <a href="#home">Home</a>
+    </li>
+    <li>
+        <a href="#about">About us</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+      <li>
+        <a href="#book-now">Free Consultation</a>
+      </li>
+  </ul>
+
+  <section class="slider">
+    <ul class="slides">
+      <li>
+        <img src="images/susanne-neumair-V3S4EaKv35o-unsplash.jpg" class="tinted"> 
+        <div class="caption caption1 left-align">
+          <h1 class="blue-grey darken-1">
+            Chester Wedding DJs
+          </h1>
+          <h5 class="blue-grey darken-1 light grey-text text-lighten-3">The best Chester wedding DJs, with years of experience providing entertainment for weddings, parties and corporate events in and around Chester & Cheshire.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/mitchell-orr---LyFIjXoFY-unsplash.jpg" class="tinted">
+        <div class="caption caption2 right-align">
+          <h2 class="deep-orange darken-2">We work with all budgets</h2>
+          <h5 class="deep-orange darken-2 light grey-text text-lighten-3">Whether you're hosting a big one, or it's a low-key, budget affair where an affordable wedding DJ would be a good fit, we've got you covered - with packages to cater for all.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/andreas-ronningen-S2YssLw97l4-unsplash.jpg" class="tinted">
+        <div class="caption caption3 left-align">
+          <h2 class="amber darken-3">A music package tailored to your needs</h2>
+          <h5 class="amber darken-3 light grey-text text-lighten-3">With years of experience performing at the best bars, nightclubs and wedding venues around, at Chester wedding DJs we offer free consultation throughout your journey with us, to give you peace of mind ahead of your big day.</h5>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <div id="about" class="row scrollspy">
+
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center teal-text"><span class="material-symbols-outlined">
+          nightlife
+          </span></h2>
+        <h5 class="center">Passionate</h5>
+        <p class="light center">Our journey began with a deep love for music and a passion for creating memorable experiences. With years of experience working in the industry across the UK and in Ibiza, we founded Chester Wedding DJs with one goal in mind: to provide couples with the perfect soundtrack for their special day. We believe that music has the power to elevate every moment in life, and our mission is to make sure your wedding day is unforgettable.</p>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center teal-text"><i class="material-icons">group</i></h2>
+        <h5 class="center">Friendly and Approachable</h5>
+        <p class="light center">At Chester Wedding DJs, we understand that every wedding is unique. That's why we take a personalized approach to each event, working closely with you to curate an experience that sets the perfect mood for every moment. We ensure a seamless musical experience that keeps your guests dancing all night. Need something more? We can offer professional MCing, custom lighting, sound-systems, and special effects to make your celebration truly one-of-a-kind.</p>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center teal-text"><span class="material-symbols-outlined">
+          headphones
+          </span></h2>
+        <h5 class="center">Unrivalled Experience</h5>
+        <p class="light center">We stand out from the crowd with our years of expertise and experience performing at Chester's most renowned bars and nightclubs. Our extensive portfolio includes top venues like Bar Lounge, Commonhall Social Club, Liquor and Co., Craft and Co., The Live Rooms, Oddfellows Hotel and many more. With a proven track record of delivering top-notch performances and keeping the dance floor alive, we bring a touch of sophistication and excitement to every event.</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="parallax-container px-1 valign-wrapper scrollspy">
+<div class="section no-pad-bot">
+  <div class="container">
+    <div class="row center">
+      <h4 class="header col s12 light">DJs you can trust.</h4>
+    </div>
+  </div>
+</div>
+<div class="parallax">
+  <img src="images/modesta-zemgulyte-wMkqe4JCaAw-unsplash.jpg" alt="">
+</div>
+  </div>
+
+  <div id="contact" class="container scrollspy">
+<div class="section">
+
+  <div class="row">
+    <div class="col s12 center">
+      <h3><i class="mdi-content-send brown-text"></i></h3>
+      <h4>Contact Us</h4>
+      <p class="center-align light">
+        We're here to make your wedding day unforgettable. Feel free to reach out to us anytime, whether you want to discuss your musical preferences, have any concerns, or just want to chat about how we can make your day extra special. We're approachable, easy to talk to, and dedicated to working with you to ensure the music is spot on for your big day. We can't wait to hear from you! <br /><br />
+        Reach out to us now by filling in this contact form, or if you're ready to get the ball rolling, go ahead and <a href="#book-now">book a FREE consultation now.</a></p>
+    </div>
+  </div>
+
+</div>
+  </div>
+  <section class="section section-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card-panel blue-grey darken-1 white-text center">
+          <i class="material-icons">email</i>
+          <h5>Contact Us For More Info</h5>
+          <p>We're based in just outside Chester City Centre if you would prefer to meet face-to-face.</p>
+        </div>
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <h4>Location <span><i class="material-icons black-text">location_on</i></span></h4>
+          </li>
+          <li class="collection-item">Chester Wedding DJs</li>
+          <li class="collection-item">Handbridge</li>
+          <li class="collection-item">Chester, Cheshire</li>
+        </ul>
+      </div>
+      <div class="col s12 m6">
+        <div class="card-panel grey lighten-3">
+          <h5 class="center">Please Fill Out This Form</h5>
+          <div class="row">
+            <form id="contact-form" action="https://formspree.io/f/xvgpyqbw" method="POST" class="col s12">
+              <input type="hidden" name="_subject" value="New Contact Request for Chester Wedding DJs">
+              <input type="hidden" name="_format" value="plain">
+              <div class="row">
+                <div class="input-field col s11">
+                  <i class="material-icons prefix">person</i>
+                  <input id="name" name="name" type="text" class="validate">
+                  <label for="name">Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s11">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="number" name="number" type="number" class="validate">
+                  <label for="number">Phone Number</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s11">
+                  <i class="material-icons prefix">email</i>
+                  <input id="email" name="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s11">
+                  <i class="material-icons prefix">mode_edit</i>
+                  <textarea id="textarea" name="message" class="materialize-textarea"></textarea>
+                  <label for="textarea">Your Message</label>
+                </div>
+              </div>
+              <button type="submit" value="send" class="btn btn-large teal white-text">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <div class="parallax-container px-2 valign-wrapper">
+<div class="section no-pad-bot">
+  <div class="container">
+    <div class="row center">
+      <h4 class="header col s12 light" style="">Your special day, all taken care of.</h4>
+    </div>
+  </div>
+</div>
+<div class="parallax"><img src="images/mitchell-orr-ine1sPh-bag-unsplash.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <section id="book-now" class="section section-contact scrollspy">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Book a Free Consultation</h4>
+          <p class="center-align light">
+            Feeling ready to start planning the music for your big day? Here you can tell us a bit more about your preferences and get the conversation started. Our consultation service is free of charge and we can advise you on the best approach for your special day. We appreciate that every event and audience is unique, so we want to make sure you get the most out of our service. Whether you have specific songs in mind already, or you need help curating the perfect playlist, we're here to help. Let's work together to make your wedding day unforgettable!
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <form id="consultation-form" method="POST" class="col s12 m8 offset-m2 l6 offset-l3">
+          <input type="hidden" name="_subject" value="New Consultation Request for Chester Wedding DJs">
+          <input type="hidden" name="_format" value="plain">
+          <div class="row">
+            <div class="input-field col s11 m12 l12 teal-text">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" name="name" type="text" class="validate" required>
+              <label for="icon_prefix">Name</label>
+            </div>
+            <div class="input-field col s11 m12 l12 teal-text">
+              <i class="material-icons prefix">email</i>
+              <input id="emailTwo" name="email" type="email" class="validate" required>
+              <label for="emailTwo">Email</label>
+            </div>
+            <div class="input-field col s11 m12 l12 teal-text">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" name="number" type="tel" class="validate" required>
+              <label for="icon_telephone">Telephone</label>
+            </div>
+            <div class="input-field col s11 m12 l12 teal-text">
+              <i class="material-icons prefix">event</i>
+              <input id="date" name="event_date" type="text" class="datepicker">
+              <label for="date">Event Date</label>
+            </div>
+            <div class="input-field col s11 m12 l12 teal-text">
+              <i class="material-icons prefix">location_on</i>
+              <input id="venue" name="venue" type="text" class="validate">
+              <label for="venue">Venue</label>
+            </div>
+            <div class="input-field col s11 m12 l12 teal-text">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea id="textareatwo" name="message" class="materialize-textarea"></textarea>
+              <label for="textareatwo">Additional Info</label>
+            </div>
+
+            <div class="input-field col s11 m12 l12 teal-text">
+              <i class="material-icons prefix">music_note</i>
+              <div id="genres" class="chips chips-autocomplete"></div>
+              <input id="preferred_genres" type="hidden" name="preferred_genres">
+              <label for="genres" class="active teal-text">Preferred Genres</label>
+            </div>
+              <div class="input-field col s11 m12 l12 teal-text">
+                <i class="material-icons prefix">playlist_add</i>
+                <div id="tracks" class="chips"></div>
+                <input id="specific_tracks" type="hidden" name="specific_tracks">
+                <label for="tracks" class="active teal-text">Specific Tracks</label>
+              </div>
+
+              <div class="input-field col s12 center">
+                <button type="submit" class="btn btn-large teal">Send</button>
+              </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="section teal darken-1 white-text center">
+    <img src="images/MIL.jpg" class="center" alt="Chester Wedding DJs. Est 2024."> 
+  </footer>
+  
+</div>
+
+
+  <!-- Link to JS File -->
+  <script src="app.js"></script>
+    
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <!-- JQuery -->
+  <script>
+
+const trackElem = document.getElementById('tracks');
+const genreElem = document.getElementById('genres');
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize tooltips
+      const tooltipElems = document.querySelectorAll('.chip');
+      M.Tooltip.init(tooltipElems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize datepicker
+      const dateElems = document.querySelectorAll('.datepicker');
+      M.Datepicker.init(dateElems);
+
+      // Function to update label classes based on chip count
+      function updateLabelClasses(chipsElem, labelElem) {
+        const chipsInstance = M.Chips.getInstance(chipsElem);
+        if (chipsInstance.chipsData.length === 0) {
+          labelElem.classList.remove('active', 'teal-text');
+        } else {
+          labelElem.classList.add('active', 'teal-text');
+        }
+      }
+
+      // Function to add active and teal-text classes
+      function addActiveClasses(labelElem) {
+        labelElem.classList.add('active', 'teal-text');
+      }
+      // Function to remove active and teal-text classes if no chips
+      function removeActiveClassesIfEmpty(chipsElem, labelElem) {
+        const chipsInstance = M.Chips.getInstance(chipsElem);
+        if (chipsInstance.chipsData.length === 0) {
+          labelElem.classList.remove('active', 'teal-text');
+        }
+      }
+
+      // Initialize chips with autocomplete for genres
+      const genreLabel = document.querySelector('label[for="genres"]');
+      M.Chips.init(genreElem, {
+        data: [{
+            tag: '80s Pop'
+          },
+          {
+            tag: '90s House'
+          },
+          {
+            tag: 'Indie'
+          },
+          {
+            tag: 'Motown'
+          },
+          {
+            tag: 'R&B'
+          },
+          {
+            tag: 'Soul'
+          },
+          {
+            tag: 'Disco'
+          },
+          {
+            tag: 'Funk'
+          },
+          {
+            tag: 'Reggae'
+          },
+        ],
+        autocompleteOptions: {
+          data: {
+            'Pop': null,
+            'Rock': null,
+            'Jazz': null,
+            'Classical': null,
+            'Hip-Hop': null,
+            'Electronic': null,
+            'Country': null,
+            'Reggae': null,
+            'Blues': null,
+            'Folk': null
+          },
+          limit: Infinity,
+          minLength: 1
+        },
+        onChipAdd: function () {
+          updateLabelClasses(genreElem, genreLabel);
+        },
+        onChipDelete: function () {
+          updateLabelClasses(genreElem, genreLabel);
+        }
+      });
+
+      // Initialize chips for specific tracks
+      const trackLabel = document.querySelector('label[for="tracks"]');
+      M.Chips.init(trackElem, {
+        data: [{
+            tag: 'Luther Vandross - Never Too Much'
+          },
+          {
+            tag: 'Crystal Waters - Gypsy Woman'
+          },
+          {
+            tag: 'Beyonce - Crazy in Love'
+          },
+          {
+            tag: 'Michael Jackson - Billie Jean'
+          },
+          {
+            tag: 'The Smiths - This Charming Man'
+          },
+          {
+            tag: 'Sister Nancy - Bam Bam'
+          },
+          {
+            tag: 'Prince - Kiss'
+          }
+        ],
+        onChipAdd: function () {
+          updateLabelClasses(trackElem, trackLabel);
+        },
+        onChipDelete: function () {
+          updateLabelClasses(trackElem, trackLabel);
+        }
+      });
+
+      // Add event listeners for focus and blur events
+      genreElem.addEventListener('focusin', function () {
+        addActiveClasses(genreLabel);
+      });
+      genreElem.addEventListener('focusout', function () {
+        removeActiveClassesIfEmpty(genreElem, genreLabel);
+      });
+
+      trackElem.addEventListener('focusin', function () {
+        addActiveClasses(trackLabel);
+      });
+      trackElem.addEventListener('focusout', function () {
+        removeActiveClassesIfEmpty(trackElem, trackLabel);
+      });
+
+      // Initial check to set label classes based on pre-populated chips
+      updateLabelClasses(genreElem, genreLabel);
+      updateLabelClasses(trackElem, trackLabel);
+    });
+
+    // Sidenav
+    const sideNav = document.querySelector('.sidenav');
+    const sideNavInstance = M.Sidenav.init(sideNav, {
+      edge: 'right'
+    });
+
+    // Close sidenav on click
+    sideNav.addEventListener('click', function () {
+      setTimeout(() => {
+        sideNavInstance.close();
+      }, 200);
+    });
+
+    // Slider
+    const slider = document.querySelector('.slider');
+    M.Slider.init(slider, {
+      indicators: false,
+      height: 700,
+      transition: 500,
+      interval: 6000
+    });
+
+    // Parallax
+    document.addEventListener('DOMContentLoaded', function () {
+      const elems = document.querySelectorAll('.parallax');
+      M.Parallax.init(elems);
+    });
+
+    // Autocomplete
+    const ac = document.querySelector('.autocomplete');
+    M.Autocomplete.init(ac, {
+      data: {
+        "Consultation": null,
+        "Finance": null,
+        "Optimisation": null,
+        "Support": null,
+        "Marketing Solutions": null,
+        "Sustainability": null,
+      }
+    });
+
+    // Material Boxed
+    const mb = document.querySelectorAll('.materialboxed');
+    M.Materialbox.init(mb, {});
+
+    // Determine scroll offset based on screen width
+    const scrollOffsetValue = window.innerWidth <= 600 ? 120 : 0; 
+
+    // Initialize ScrollSpy with scrollOffset
+    const scrollSpyElems = document.querySelectorAll('.scrollspy');
+    M.ScrollSpy.init(scrollSpyElems, {
+      scrollOffset: scrollOffsetValue
+    });
+
+
+    // Handle form submission - for Formspree
+    document.getElementById('consultation-form').addEventListener('submit', function (event) {
+      event.preventDefault(); 
+      
+      const genresInstance = M.Chips.getInstance(genreElem);
+      const tracksInstance = M.Chips.getInstance(trackElem);
+
+      // Populate hidden inputs with chips data
+      const genresInput = document.getElementById('preferred_genres');
+      genresInput.value = JSON.stringify(genresInstance.chipsData.map(chip => chip.tag));
+      const tracksInput = document.getElementById('specific_tracks');
+      tracksInput.value = JSON.stringify(tracksInstance.chipsData.map(chip => chip.tag));
+
+      // Submit the form
+      this.action = "https://formspree.io/f/xnnarzbr";
+      this.submit();
+    });
+
+
+  </script>
+
+</body>
+
+</html>
+
+
