@@ -28,18 +28,18 @@ function orangeOnClick(event) {
     } 
 }
 
-
-// SCROLL PROGRESS INDICATOR – HEADER FEATURE
-window.onscroll = function()
-{progressBarFunction()};
+// Scroll Progress Bar  
+window.onscroll = function() {
+    progressBarFunction();
+};
 
 function progressBarFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
 
     document.getElementById("myBar").style.width = scrolled + "%";
-};
+}
 
 // CHANGE MENU TITLES VISUALLY ON CLICK
 
