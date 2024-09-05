@@ -2,8 +2,27 @@
     letter-spacing: 0.06em;
 }
 
-body 
-{  min-width: 551px; }
+/* DESKTOP ONLY STYLES */
+@media screen and (min-width: 768px) {
+    body {
+        min-width: 551px;
+    }
+}
+
+/* MOBILE ONLY STYLES */
+@media screen and (max-width: 768px) {
+    .page-heading {
+        margin-top: 3.2vh !important;
+    }
+    .name {
+        padding-right: 0 !important;
+        font-size: 24px !important;
+    }
+    .contact-form {
+        width: auto !important;
+    }
+}
+
 
 i {
     display: inline-block;
