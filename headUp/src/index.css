@@ -1,0 +1,25 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Change the background color of the toast to red and text color to white */
+.Toastify__toast {
+    background-color: white !important;
+    color: red !important;
+    font-weight: 500;
+  }
+  
+  /* Change the color of the close button to white */
+  .Toastify__close-button {
+    color: red !important;
+  }
