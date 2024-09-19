@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/headUp/static/css/main.0753a819.css",
+    "main.js": "/headUp/static/js/main.28ef614d.js",
+    "index.html": "/headUp/index.html",
+    "main.0753a819.css.map": "/headUp/static/css/main.0753a819.css.map",
+    "main.28ef614d.js.map": "/headUp/static/js/main.28ef614d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0753a819.css",
+    "static/js/main.28ef614d.js"
+  ]
+}
