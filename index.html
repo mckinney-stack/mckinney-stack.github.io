@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan McKinney-Robinson – Software Engineer</title>
     <!-- Google Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Compiled and minified CSS -->
@@ -17,49 +17,51 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="transitions.css">
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Import Poppins font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-  <link rel="icon" href="https://evan-mckinney-robinson.co.uk/images/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="https://evan-mckinney-robinson.co.uk/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://evan-mckinney-robinson.co.uk/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://evan-mckinney-robinson.co.uk/images/favicon.ico" type="image/x-icon">
 
-    
+
     <!--Add image to link etc-->
-    <meta property='og:title' content='Evan McKinney-Robinson – Software Engineer'/>
-    <meta property='og:image' content='images/Screen Shot 2021-03-08 at 12.20.11.png'/>
-    <meta property='og:description' content='Welcome to my portfolio. I’m a self-taught frontend developer with a passion for building high-quality, user-centric web experiences. My journey into development began with a deep dive into music technology, where problem-solving and a keen understanding of complex software were essential to my roles in education and sales. Experimenting with tools like Max/MSP sparked my curiosity, but it was discovering JavaScript that truly ignited my love for programming—offering endless possibilities for creativity and learning. Now, as a frontend developer at a leading corporation, I specialize in creating scalable, performant, and accessible web applications. Working with technologies like React, TypeScript, and modern CMS solutions, I’ve built a robust skill set that aligns with today’s frontend best practices. My focus on reusability, clean code, and collaboration in agile, cross-disciplinary teams allows me to deliver components and solutions that drive business goals while enhancing user experience. Lifelong learning remains at the heart of my work—I’m always excited to tackle new challenges and grow alongside the evolving tech landscape.'/>
-    <meta property='og:url' content='evan-mckinney-robinson.co.uk'/>
-    
-    
+    <meta property='og:title' content='Evan McKinney-Robinson – Software Engineer' />
+    <meta property='og:image' content='images/Screen Shot 2021-03-08 at 12.20.11.png' />
+    <meta property='og:description'
+        content='Welcome to my portfolio. I’m a self-taught frontend developer with a passion for building high-quality, user-centric web experiences. My journey into development began with a deep dive into music technology, where problem-solving and a keen understanding of complex software were essential to my roles in education and sales. Experimenting with tools like Max/MSP sparked my curiosity, but it was discovering JavaScript that truly ignited my love for programming—offering endless possibilities for creativity and learning. Now, as a frontend developer at a leading corporation, I specialize in creating scalable, performant, and accessible web applications. Working with technologies like React, TypeScript, and modern CMS solutions, I’ve built a robust skill set that aligns with today’s frontend best practices. My focus on reusability, clean code, and collaboration in agile, cross-disciplinary teams allows me to deliver components and solutions that drive business goals while enhancing user experience. Lifelong learning remains at the heart of my work—I’m always excited to tackle new challenges and grow alongside the evolving tech landscape.' />
+    <meta property='og:url' content='evan-mckinney-robinson.co.uk' />
+
+
 </head>
+
 <body class="background page">
 
     <!-- TRANSITION ELEMENT -->
     <div class="transition transition-3 is-active"></div>
-    
+
     <!-- SCROLL PROGRESS BAR -->
     <div class="header">
         <div class="progress-container">
             <div class="progress-bar" id="myBar"></div>
         </div>
     </div>
-    
+
 
     <!-- MAIN HEADINGS / NAVBAR -->
     <div class="nav">
         <div class="container">
-        <span>
-            <h5 class="name">Evan McKinney-Robinson</h5>
-            <a href="about.html" class="nav-titles hide-on-small-only orange-click">About</a>
-            <a href="contact.html" class="nav-titles hide-on-small-only orange-click">Contact</a>
-            <!-- <a href="https://evan-mckinney-robinson.co.uk/hockey-counter/" class="nav-titles hide-on-small-only orange-click">HeadUp</a> -->
-            <h6 class="sub-heading">Software Engineer</h6><br>
-            <a href="about.html" class="small-screen-nav-titles hide-on-med-and-up orange-click">About</a>
-            <a href="contact.html" class="small-screen-nav-titles hide-on-med-and-up orange-click">Contact</a>
-            <!-- <a href="https://evan-mckinney-robinson.co.uk/hockey-counter/" class="small-screen-nav-titles hide-on-med-and-up orange-click">HeadUp</a> -->
-        </span>
+            <span>
+                <h5 class="name">Evan McKinney-Robinson</h5>
+                <a href="about.html" class="nav-titles hide-on-small-only orange-click">About</a>
+                <a href="contact.html" class="nav-titles hide-on-small-only orange-click">Contact</a>
+                <!-- <a href="https://evan-mckinney-robinson.co.uk/hockey-counter/" class="nav-titles hide-on-small-only orange-click">HeadUp</a> -->
+                <h6 class="sub-heading">Software Engineer</h6><br>
+                <a href="about.html" class="small-screen-nav-titles hide-on-med-and-up orange-click">About</a>
+                <a href="contact.html" class="small-screen-nav-titles hide-on-med-and-up orange-click">Contact</a>
+                <!-- <a href="https://evan-mckinney-robinson.co.uk/hockey-counter/" class="small-screen-nav-titles hide-on-med-and-up orange-click">HeadUp</a> -->
+            </span>
         </div>
     </div>
 
@@ -70,45 +72,71 @@
 
     <div class="container">
         <!-- LOAN CALCULATOR PROJECT -->
-        <div class="card small loan-calculator-card z-depth-2" id="lc-card" onclick="parent.open('Loan-Calculator/index.html');">
+        <div class="card small loan-calculator-card z-depth-2" id="lc-card"
+            onclick="parent.open('Loan-Calculator/index.html');">
             <h5 class="card-heading-left" id="lc-heading">Loan Calculator</h5>
-            <h6 class="lc-visit-btn" id="lc-visit-site" onclick="parent.open('Loan-Calculator/index.html');">Visit Site</h6>
-            <h6 class="lc-view-code-btn" id="lc-view-code" onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/Loan-Calculator');">View Code</h6>
-            <h6 class="lc-info" id="lc-info">A simple loan repayment calculator, built using vanilla JavaScript and an equation. Including the option to recalculate repayments (and other factors) after the initial calculation has been made.</h6>
+            <h6 class="lc-visit-btn" id="lc-visit-site" onclick="parent.open('Loan-Calculator/index.html');">Visit Site
+            </h6>
+            <h6 class="lc-view-code-btn" id="lc-view-code"
+                onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/Loan-Calculator');">
+                View Code</h6>
+            <h6 class="lc-info" id="lc-info">A simple loan repayment calculator, built using vanilla JavaScript and an
+                equation. Including the option to recalculate repayments (and other factors) after the initial
+                calculation has been made.</h6>
         </div>
         <br>
         <!-- EG CORP PROJECT -->
-        <div class="card small eg-corp-card z-depth-2" id="eg-card" onclick="parent.open('chester-wedding-djs/index.html');">
+        <div class="card small eg-corp-card z-depth-2" id="eg-card"
+            onclick="parent.open('chester-wedding-djs/index.html');">
             <h5 class="card-heading-right" id="eg-corp-heading">Chester Wedding DJs</h5>
             <br>
-            <h6 class="eg-corp-visit-btn" id="eg-visit-site" onclick="parent.open('chester-wedding-djs/index.html');">Visit Site</h6>
-            <h6 class="eg-corp-view-code-btn" id="eg-view-code" onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/chester-wedding-djs');">View Code</h6>
-            <h6 class="eg-corp-info" id="eg-info">A brochure-style website for a local wedding DJ agency, complete with bespoke consultation contact/booking form.</h6>
+            <h6 class="eg-corp-visit-btn" id="eg-visit-site" onclick="parent.open('chester-wedding-djs/index.html');">
+                Visit Site</h6>
+            <h6 class="eg-corp-view-code-btn" id="eg-view-code"
+                onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/chester-wedding-djs');">
+                View Code</h6>
+            <h6 class="eg-corp-info" id="eg-info">A brochure-style website for a local wedding DJ agency, complete with
+                bespoke consultation contact/booking form.</h6>
         </div>
         <br>
         <!-- DEFYING HANGRY PROJECT -->
-        <div class="card small defying-hangry-card z-depth-2" id="defying-hangry-card" onclick="parent.open('defying-hangry/index.html');">
+        <div class="card small defying-hangry-card z-depth-2" id="defying-hangry-card"
+            onclick="parent.open('defying-hangry/index.html');">
             <h5 class="card-heading-left" id="dh-card-heading">Defying Hangry</h5>
-            <h6 class="defying-hangry-visit-btn" id="dh-visit-site" onclick="parent.open('defying-hangry/index.html');">Visit Site</h6>
-            <h6 class="defying-hangry-view-code-btn" id="dh-view-code" onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/defying-hangry');">View Code</h6>
-            <h6 class="defying-hangry-info" id="defying-hangry-info">A web application designed as a concept for an existing food blog, which allows users to choose and remove their favourite recipes – utilising OOP for efficiency and local storage to allow users to return to the site and find them. Built using vanilla JS and some JQuery and Materialize elements.</h6>
+            <h6 class="defying-hangry-visit-btn" id="dh-visit-site" onclick="parent.open('defying-hangry/index.html');">
+                Visit Site</h6>
+            <h6 class="defying-hangry-view-code-btn" id="dh-view-code"
+                onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/defying-hangry');">
+                View Code</h6>
+            <h6 class="defying-hangry-info" id="defying-hangry-info">A web application designed as a concept for an
+                existing food blog, which allows users to choose and remove their favourite recipes – utilising OOP for
+                efficiency and local storage to allow users to return to the site and find them. Built using vanilla JS
+                and some JQuery and Materialize elements.</h6>
         </div>
         <br>
         <!-- WEATHERWATCH PROJECT -->
-        <div class="card small weatherwatch-card z-depth-2" id="ww-card" onclick="parent.open('WeatherWatch/index.html');">
+        <div class="card small weatherwatch-card z-depth-2" id="ww-card"
+            onclick="parent.open('WeatherWatch/index.html');">
             <h5 class="card-heading-right" id="ww-heading">WeatherWatch</h5>
             <br>
-            <h6 class="ww-visit-btn" id="ww-visit-site" onclick="parent.open('WeatherWatch/index.html');">Visit Site</h6>
-            <h6 class="ww-view-code-btn" id="ww-view-code" onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/WeatherWatch');">View Code</h6>
-            <h6 class="ww-info" id="ww-info">A weather application designed to provide the current weather in locations around the world. Built using the Open Weather Map API – making calls to a restful API to return the current weather data. This uses the modern Javascript Fetch API.</h6>
+            <h6 class="ww-visit-btn" id="ww-visit-site" onclick="parent.open('WeatherWatch/index.html');">Visit Site
+            </h6>
+            <h6 class="ww-view-code-btn" id="ww-view-code"
+                onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/WeatherWatch');">
+                View Code</h6>
+            <h6 class="ww-info" id="ww-info">A weather application designed to provide the current weather in locations
+                around the world. Built using the Open Weather Map API – making calls to a restful API to return the
+                current weather data. This uses the modern Javascript Fetch API.</h6>
         </div>
         <br><br><br>
         <div class="portfolio-divider"></div>
     </div>
     <div class="container">
         <footer>
-            <i class="small fa fa-linkedin footer-icons left linked-in-footer-icon" onclick="parent.open('https://www.linkedin.com/in/evan-mckinney-robinson-2532521ba/?originalSubdomain=uk');"></i> 
-            <i class="small fa fa-github footer-icons left" onclick="parent.open('https://github.com/mckinney-stack');"></i>
+            <i class="small fa fa-linkedin footer-icons left linked-in-footer-icon"
+                onclick="parent.open('https://www.linkedin.com/in/evan-mckinney-robinson-2532521ba/?originalSubdomain=uk');"></i>
+            <i class="small fa fa-github footer-icons left"
+                onclick="parent.open('https://github.com/mckinney-stack');"></i>
             <h6 class="right footer-name">Evan McKinney-Robinson</h6><br><br>
             <h6 class="right footer-job-title">Software Engineer</h6>
             <br>
@@ -117,9 +145,10 @@
         </footer>
     </div>
 
-<script src="app.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 
 </body>
+
 </html>
