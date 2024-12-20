@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.0753a819.css",
+    "main.js": "./static/js/main.054e52a7.js",
+    "static/media/HeadUp-lowres.mp4": "./static/media/HeadUp-lowres.4e9d44df605c23133f82.mp4",
+    "index.html": "./index.html",
+    "main.0753a819.css.map": "./static/css/main.0753a819.css.map",
+    "main.054e52a7.js.map": "./static/js/main.054e52a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0753a819.css",
+    "static/js/main.054e52a7.js"
+  ]
+}
