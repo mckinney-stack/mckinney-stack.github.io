@@ -33,7 +33,6 @@
         content='Welcome to my portfolio. I’m a self-taught frontend developer with a passion for building high-quality, user-centric web experiences. My journey into development began with a deep dive into music technology, where problem-solving and a keen understanding of complex software were essential to my roles in education and sales. Experimenting with tools like Max/MSP sparked my curiosity, but it was discovering JavaScript that truly ignited my love for programming—offering endless possibilities for creativity and learning. Now, as a frontend developer at a leading corporation, I specialize in creating scalable, performant, and accessible web applications. Working with technologies like React, TypeScript, and modern CMS solutions, I’ve built a robust skill set that aligns with today’s frontend best practices. My focus on reusability, clean code, and collaboration in agile, cross-disciplinary teams allows me to deliver components and solutions that drive business goals while enhancing user experience. Lifelong learning remains at the heart of my work—I’m always excited to tackle new challenges and grow alongside the evolving tech landscape.' />
     <meta property='og:url' content='evan-mckinney-robinson.co.uk' />
 
-
 </head>
 
 <body class="background page">
@@ -56,7 +55,6 @@
                 <h5 class="name">Evan McKinney-Robinson</h5>
                 <a href="about.html" class="nav-titles hide-on-small-only orange-click">About</a>
                 <a href="contact.html" class="nav-titles hide-on-small-only orange-click">Contact</a>
-                <a href="/build" class="nav-titles hide-on-small-only orange-click">HeadUp</a>
                 <!-- <a href="https://evan-mckinney-robinson.co.uk/hockey-counter/" class="nav-titles hide-on-small-only orange-click">HeadUp</a> -->
                 <h6 class="sub-heading">Software Engineer</h6><br>
                 <a href="about.html" class="small-screen-nav-titles hide-on-med-and-up orange-click">About</a>
@@ -72,6 +70,20 @@
     </div>
 
     <div class="container">
+        <!-- HEADUP PROJECT -->
+        <div class="card small headup-card z-depth-2" id="headup-card" onclick="parent.open('/build');">
+            <h5 class="card-heading-right black-text" id="headup-heading">HeadUp</h5>
+            <br>
+            <h6 class="headup-visit-btn" id="headup-visit-site" onclick="parent.open('/build');">
+                Visit Site</h6>
+            <h6 class="headup-view-code-btn" id="headup-view-code"
+                onclick="parent.open('https://github.com/mckinney-stack/headup');">
+                View Code</h6>
+            <h6 class="headup-info" id="headup-info">A React ice hockey training app designed to supercharge your
+                hockey IQ, sharpen your stickhandling skills, and improve your spatial awareness—all while having fun.
+            </h6>
+        </div>
+        <br>
         <!-- LOAN CALCULATOR PROJECT -->
         <div class="card small loan-calculator-card z-depth-2" id="lc-card"
             onclick="parent.open('Loan-Calculator/index.html');">
@@ -87,16 +99,16 @@
         </div>
         <br>
         <!-- EG CORP PROJECT -->
-        <div class="card small eg-corp-card z-depth-2" id="eg-card"
+        <div class="card small cwd-card z-depth-2" id="cwd-card"
             onclick="parent.open('chester-wedding-djs/index.html');">
-            <h5 class="card-heading-right" id="eg-corp-heading">Chester Wedding DJs</h5>
+            <h5 class="card-heading-right" id="cwd-heading">Chester Wedding DJs</h5>
             <br>
-            <h6 class="eg-corp-visit-btn" id="eg-visit-site" onclick="parent.open('chester-wedding-djs/index.html');">
+            <h6 class="cwd-visit-btn" id="cwd-visit-site" onclick="parent.open('chester-wedding-djs/index.html');">
                 Visit Site</h6>
-            <h6 class="eg-corp-view-code-btn" id="eg-view-code"
+            <h6 class="cwd-view-code-btn" id="cwd-view-code"
                 onclick="parent.open('https://github.com/mckinney-stack/mckinney-stack.github.io/tree/main/chester-wedding-djs');">
                 View Code</h6>
-            <h6 class="eg-corp-info" id="eg-info">A brochure-style website for a local wedding DJ agency, complete with
+            <h6 class="cwd-info" id="cwd-info">A brochure-style website for a local wedding DJ agency, complete with
                 bespoke consultation contact/booking form.</h6>
         </div>
         <br>
