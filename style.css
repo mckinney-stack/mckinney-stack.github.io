@@ -14,9 +14,14 @@
 
 /* TINY MOBILE SCREEN STYLES */
 @media screen and (max-width: 400px) {
-    .footer-job-title, .footer-name {
-        visibility: hidden;
-        display: none;
+
+    .footer-name {
+        font-size: 14px;
+    }
+
+    .footer-job-title,  {
+        font-size: 12px;
+        bottom: 14px;
     }
 }
 
