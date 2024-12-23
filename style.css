@@ -12,6 +12,14 @@
     }
 }
 
+/* TINY MOBILE SCREEN STYLES */
+@media screen and (max-width: 400px) {
+    .footer-job-title, .footer-name {
+        visibility: hidden;
+        display: none;
+    }
+}
+
 /* MOBILE ONLY STYLES */
 @media screen and (max-width: 768px) {
     .page-heading {
@@ -904,7 +912,6 @@ button[type="submit"]:hover {
     font-size: 17px;
     letter-spacing: 0.09em;
     text-decoration: underline; 
-
 }
 
 .footer-job-title {
