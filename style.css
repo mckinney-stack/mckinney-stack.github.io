@@ -249,66 +249,63 @@ h5 {
 .cwd-info {
     position: relative;
     display: flex;
-    float: right;
-    text-align: justify;
+    float: left;
     font-size: 15px;
     font-weight: 400;
     width: 50%;
-    top: 6px;
-    left: 600px;
-    margin: 0px 22px 20px 20px;
-    padding: 20px 1px 20px 10px;
-    border-top: 8px solid teal;
+    margin: 20px 0px 20px 20px;
+    padding: 20px 8px 20px 4px;
+    top: 400px;
+    text-align: justify;
+    border-top: 7px solid teal;
     border-bottom: 7px solid teal;
-    border-radius: 7px 1px 1px 7px;
+    border-radius: 1px 7px 7px 1px;
     opacity: 0;
-    transition: opacity 0.5s ease, left 0.5s ease;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    color: white;
     background: teal;
 }
 
 .cwd-view-code-btn {
-    position: relative;
+     position: relative;
     display: flex;
-    float: left;
-    bottom: 18px;
-    top: 700px;
+    float: right;
     width: 17%;
     font-weight: 600;
     font-size: 18px;
     padding: 15px 5px;
-    opacity: 0;
+    top: 600px;
+    opacity: 1;
     border-left: 4px solid transparent;
     border-radius: 4px;
-    margin: 10px 20px;
     transition: opacity 0.5s ease, top 0.5s ease;
 }
 
 .cwd-view-code-btn:hover {
-    color: rgba(255, 217, 1, 0.952);
-    border-left: 4px solid rgba(255, 217, 1, 0.952);
+    color: teal;
+    border-left: 4px solid teal;
     transition: all 0.4s ease;
 }
 
 .cwd-visit-btn {
     position: relative;
     display: flex;
-    float: left;
-    left: 28px;
-    bottom: 600px;
+    float: right;
     width: 17%;
     font-weight: 600;
     font-size: 18px;
     padding: 15px 5px;
+    top: 3px;
+    left: 400px;
     opacity: 1;
     border-left: 4px solid transparent;
     border-radius: 4px;
-    margin: 10px 20px 10px 0px;
-    transition: opacity 0.5s ease, bottom 0.55s ease;
+    transition: opacity 0.5s ease, left 0.5s ease;
 }
 
 .cwd-visit-btn:hover {
-    color: rgba(255, 217, 1, 0.952);
-    border-left: 4px solid rgba(255, 217, 1, 0.952);
+    color: teal;
+    border-left: 4px solid teal;
     transition: all 0.4s ease;
 }
 
@@ -335,7 +332,7 @@ h5 {
     top: 6px;
     left: 600px;
     margin: 0px 22px 20px 20px;
-    padding: 20px 1px 20px 10px;
+    padding: 20px 4px 20px 8px;
     border-top: 8px solid teal;
     border-bottom: 7px solid teal;
     border-radius: 7px 1px 1px 7px;
@@ -363,8 +360,8 @@ h5 {
 }
 
 .headup-view-code-btn:hover {
-    color: rgba(255, 217, 1, 0.952);
-    border-left: 4px solid rgba(255, 217, 1, 0.952);
+    color: teal;
+    border-left: 4px solid teal;
     transition: all 0.4s ease;
 }
 
@@ -387,8 +384,8 @@ h5 {
 }
 
 .headup-visit-btn:hover {
-    color: rgba(255, 217, 1, 0.952);
-    border-left: 4px solid rgba(255, 217, 1, 0.952);
+    color: teal;
+    border-left: 4px solid teal;
     transition: all 0.4s ease;
 }
 
@@ -403,14 +400,16 @@ h5 {
     font-weight: 400;
     width: 50%;
     margin: 20px 0px 20px 20px;
-    padding: 20px 10px 20px 1px;
+    padding: 20px 8px 20px 4px;
     top: 400px;
     text-align: justify;
-    border-top: 7px solid white;
-    border-bottom: 7px solid white;
+    border-top: 7px solid teal;
+    border-bottom: 7px solid teal;
     border-radius: 1px 7px 7px 1px;
     opacity: 0;
     transition: opacity 0.5s ease, top 0.5s ease;
+    color: white;
+    background: teal;
 }
 
 .lc-view-code-btn {
@@ -476,8 +475,9 @@ h5 {
     width: 50%;
     margin: 0px 22px 20px 20px;
     padding: 20px 1px 20px 10px;
-    border-top: 7px solid white;
-    border-bottom: 7px solid white;
+    border-top: 7px solid teal;
+    border-bottom: 7px solid teal;
+    background: teal;
     border-radius: 7px 1px 1px 7px;
     left: 500px;
     opacity: 0;
@@ -563,12 +563,6 @@ h5 {
 
 #dh-card-heading, #headup-heading, #lc-heading, #ww-heading {
     transition: all 0.5s ease;
-}
-
-.card-heading-right:hover {
-    color: teal;
-    opacity: 0.95;
-    transition: all 0.3s ease-out;
 }
 
 .headup-heading {
@@ -947,3 +941,41 @@ button[type="submit"]:hover {
     bottom: 1px;
 }
 
+
+
+.accordion {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .accordion-header {
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 24px;
+    border-left: teal solid 4px;
+    border-radius: 2px;
+    padding-left: 8px;
+  }
+
+  .accordion-header:active, button.accordion-header:focus {
+    background: transparent !important;
+    border-left:#ffdb0d solid 4px;
+  }
+  
+  .accordion-content {
+    display: none;
+    text-align: justify;
+  }
+
+  .accordion-content a {
+    color: teal;
+    text-decoration: underline;
+    margin-right: 20px;
+  }
+  
