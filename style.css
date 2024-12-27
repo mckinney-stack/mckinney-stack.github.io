@@ -961,6 +961,7 @@ button[type="submit"]:hover {
     border-left: teal solid 4px;
     border-radius: 2px;
     padding-left: 8px;
+    color: black !important;
   }
 
   .accordion-header:active, button.accordion-header:focus {
