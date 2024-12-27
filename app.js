@@ -102,36 +102,6 @@ function contactResizeFunc(e) {
 
 // Add hover events to portfolio image cards
 
-// DEFYING HANGRY
-const defyingHangryCard = document.getElementById("defying-hangry-card");
-const defyingHangryInfo = document.getElementById("defying-hangry-info");
-const dhVisitSite = document.getElementById("dh-visit-site");
-const dhViewCode = document.getElementById("dh-view-code");
-const dhCard = document.querySelector(".defying-hangry-card");
-const dhCardHeading = document.getElementById("dh-card-heading");
-
-defyingHangryCard.addEventListener("mouseover", (e) => {
-  defyingHangryInfo.style.opacity = "1";
-  defyingHangryInfo.style.top = "-10px";
-  dhVisitSite.style.left = "0px";
-  dhViewCode.style.top = "2px";
-  dhCard.classList.add("z-depth-3");
-  dhCard.style.bottom = "3px";
-  dhCard.style.right = "3px";
-  dhCardHeading.style.color = "rgba(255, 217, 1, 0.952)";
-});
-
-defyingHangryCard.addEventListener("mouseleave", (e) => {
-  defyingHangryInfo.style.opacity = "0";
-  defyingHangryInfo.style.top = "400px";
-  dhVisitSite.style.left = "400px";
-  dhViewCode.style.top = "600px";
-  dhCard.classList.remove("z-depth-3");
-  dhCard.style.bottom = "0px";
-  dhCard.style.right = "0px";
-  dhCardHeading.style.color = "white";
-});
-
 // HeadUp
 const headupInfo = document.getElementById("headup-info");
 const headupVisitSite = document.getElementById("headup-visit-site");
@@ -149,7 +119,7 @@ headupCard.addEventListener("mouseover", (e) => {
   headupCard.classList.add("z-depth-3");
   headupCard.style.bottom = "3px";
   headupCard.style.right = "3px";
-  headupCardHeading.style.color = "teal";
+  headupCardHeading.style.color = "black";
 });
 
 headupCard.addEventListener("mouseleave", (e) => {
@@ -173,21 +143,19 @@ const cwdCardHeading = document.getElementById("cwd-heading");
 
 cwdCard.addEventListener("mouseover", (e) => {
   cwdInfo.style.opacity = "1";
-  cwdInfo.style.left = "0px";
-  cwdVisitSite.style.bottom = "18px";
+  cwdInfo.style.top = "-10px";
+  cwdVisitSite.style.left = "0px";
   cwdVisitSite.style.opacity = "1";
-  cwdViewCode.style.top = "-18px";
-  cwdViewCode.style.opacity = "1";
+  cwdViewCode.style.top = "3px";
   cwdCard.classList.add("z-depth-3");
   cwdCard.style.bottom = "3px";
   cwdCard.style.right = "3px";
-  cwdCardHeading.style.color = "teal";
 });
 
 cwdCard.addEventListener("mouseleave", (e) => {
   cwdInfo.style.opacity = "0";
-  cwdInfo.style.left = "600px";
-  cwdVisitSite.style.bottom = "600px";
+  cwdInfo.style.top = "400px";
+  cwdVisitSite.style.left = "300px";
   cwdVisitSite.style.opacity = "0";
   cwdViewCode.style.top = "700px";
   cwdCard.classList.remove("z-depth-3");
@@ -211,7 +179,6 @@ lcCard.addEventListener("mouseover", (e) => {
   lcCard.classList.add("z-depth-3");
   lcCard.style.bottom = "3px";
   lcCard.style.right = "3px";
-  lcHeading.style.color = "rgba(255, 217, 1, 0.952)";
 });
 
 lcCard.addEventListener("mouseleave", (e) => {
@@ -238,7 +205,6 @@ wwCard.addEventListener("mouseover", (e) => {
   wwCard.classList.add("z-depth-3");
   wwCard.style.bottom = "3px";
   wwCard.style.right = "3px";
-  wwHeading.style.color = "teal";
   wwViewCode.style.top = "-16px";
   wwViewCode.style.opacity = "1";
   wwVisitSite.style.opacity = "1";
@@ -293,4 +259,19 @@ window.addEventListener("DOMContentLoaded", (e) => {
     wwViewCode.style.width = "17%";
     wwVisitSite.style.width = "17%";
   }
+});
+
+// Accordion Scripts
+document.querySelectorAll(".accordion-header").forEach((button) => {
+  button.addEventListener("click", () => {
+    const content = button.nextElementSibling;
+
+    button.classList.toggle("active");
+
+    if (button.classList.contains("active")) {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  });
 });
