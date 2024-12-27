@@ -980,4 +980,12 @@ button[type="submit"]:hover {
     text-decoration: underline;
     margin-right: 20px;
   }
-  
+
+    .accordion-item span {
+        color: teal;
+        transition: all 0.2s ease;
+        margin-right: 8px;
+        float: right;
+        transition: all 0.2s ease;
+        transform: rotate(-180deg);
+    }
