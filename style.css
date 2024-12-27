@@ -981,11 +981,10 @@ button[type="submit"]:hover {
     margin-right: 20px;
   }
 
-    .accordion-item span {
+    .accordion-item .accordion-header span {
         color: teal;
-        transition: all 0.2s ease;
+        transition: all 0.1s ease;
         margin-right: 8px;
         float: right;
-        transition: all 0.2s ease;
         transform: rotate(-180deg);
     }
