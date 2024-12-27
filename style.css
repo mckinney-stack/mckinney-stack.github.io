@@ -315,6 +315,7 @@ h5 {
 .headup-card {
     background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) ), url("images/headup-screenshot.jpg");
     background-position-y: center;
+    background-position-x: center;
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;
